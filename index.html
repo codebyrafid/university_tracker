@@ -1477,6 +1477,97 @@ body{background:#f4f6f1;color:var(--reference-ink)}
   color:#7b8580!important;
 }
 </style>
+<style>
+/* Keep the Erasmus hero full-bleed, but align its copy with the centered page content. */
+#erasmus-view .em-hero{
+  box-sizing:border-box;
+  width:100%;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+#erasmus-view .em-hero-copy{
+  box-sizing:border-box;
+  width:min(1300px,calc(100% - 48px))!important;
+  max-width:1300px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:left;
+}
+#erasmus-view .em-hero h1{
+  max-width:650px;
+  text-align:left;
+}
+@media(max-width:640px){
+  #erasmus-view .em-hero-copy{width:calc(100% - 36px)!important}
+}
+</style>
+<style>
+/* Full-bleed Erasmus hero: escape the centered content wrapper without leaving a right gap */
+#erasmus-view .em-hero{
+  box-sizing:border-box!important;
+  position:relative!important;
+  width:100vw!important;
+  max-width:100vw!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  margin-left:0!important;
+  margin-right:0!important;
+}
+</style>
+<style>
+/* Final Erasmus layout alignment: hero copy and content share the same left edge */
+#erasmus-view .em-hero{
+  padding-left:0!important;
+  padding-right:0!important;
+}
+#erasmus-view .em-hero-copy{
+  box-sizing:border-box!important;
+  width:min(1300px,calc(100% - 70px))!important;
+  max-width:1300px!important;
+  margin:0 auto!important;
+  padding:0!important;
+  text-align:left!important;
+}
+#erasmus-view .em-hero h1{
+  margin-left:0!important;
+  text-align:left!important;
+}
+#erasmus-view .section-head{
+  box-sizing:border-box;
+  width:min(1300px,calc(100% - 44px));
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+#erasmus-view .em-layout{
+  box-sizing:border-box;
+  width:min(1300px,calc(100% - 44px));
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+@media(max-width:900px){
+  #erasmus-view .em-grid{grid-template-columns:minmax(0,1fr)!important}
+}
+</style>
+<style>
+/* Align Erasmus hero text exactly with the programme grid's centered content edge */
+#erasmus-view .em-hero-copy{
+  box-sizing:border-box!important;
+  width:min(1300px,calc(100% - 92px))!important;
+  max-width:1300px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  padding:0!important;
+  text-align:left!important;
+}
+#erasmus-view .em-hero h1{
+  margin-left:0!important;
+  margin-right:0!important;
+  text-align:left!important;
+}
+@media(max-width:640px){
+  #erasmus-view .em-hero-copy{width:calc(100% - 36px)!important}
+}
+</style>
 </head>
 <body>
 <header><div class="bar"><div class="brand" aria-label="EuroTrack">
@@ -1607,11 +1698,11 @@ body{background:#f4f6f1;color:var(--reference-ink)}
   <section class="em-hero" aria-label="Erasmus Mundus overview">
     <div class="em-hero-copy">
       <span class="eyebrow">YOUR 2027 INTAKE, ORGANISED</span>
-      <h1>Explore your Erasmus Mundus options.</h1>
+      <h1>Finance Erasmus Mundus Options</h1>
 </div>
   </section>
   
-  <div class="section-head"><div><h2>Programme deadlines</h2><p>Application deadlines and programme links</p></div></div>
+  <div class="section-head"><div><h2>Erasmus Mundus programmes</h2><p>Application deadlines and programme links</p></div></div>
   <div class="em-layout"><section class="em-grid" id="em-programmes" aria-label="Erasmus Mundus programme cards">
     <article class="em-card" id="em-grenfin">
       <div class="em-card-top"><div><h3>GrEnFIn</h3><div class="em-subject">Greening Energy Market and Finance · Environmental Finance / Climate & Business</div></div><span class="pill soon">Priority 1</span></div>
@@ -2073,7 +2164,7 @@ function setCountry(c){var picker=document.getElementById("country-select");if(p
  }
  document.getElementById("applications-view").hidden=true;
  document.getElementById("nextdl").style.visibility="visible";
- setHeroVisual(c);if(c==="em"){COUNTRY="em";document.getElementById("list").hidden=true;document.getElementById("detail").hidden=true;document.getElementById("erasmus-view").hidden=false;document.querySelectorAll(".country-btn").forEach(function(b){var a=b.dataset.country===c;b.classList.toggle("active",a);b.setAttribute("aria-pressed",a)});updateNext();return;}document.getElementById("list").hidden=false;document.getElementById("erasmus-view").hidden=true;document.getElementById("detail").hidden=true;document.getElementById("sweden-calendar").hidden=c!=="se";document.getElementById("germany-calendar").hidden=c!=="de";document.querySelectorAll(".calendar-toggle").forEach(function(b){b.setAttribute("aria-expanded","false");var p=document.getElementById(b.getAttribute("aria-controls"));if(p)p.hidden=true;});COUNTRY=c;U=c==="de"?GERMANY_U:(c==="se"?SWEDEN_U:ITALY_U);VER=c==="de"?GERMANY_VER:(c==="se"?SWEDEN_VER:ITALY_VER);BUS=c==="de"?GERMANY_BUS:(c==="se"?SWEDEN_BUS:ITALY_BUS);RANK=c==="de"?{}:(c==="se"?SWEDEN_RANK:ITALY_RANK);S.filter="all";document.getElementById("q").value="";document.getElementById("region").value="";document.getElementById("region").disabled=c!=="it";document.getElementById("sort").value="close";document.querySelectorAll(".country-btn").forEach(function(b){var a=b.dataset.country===c;b.classList.toggle("active",a);b.setAttribute("aria-pressed",a)});var heroEyebrow=document.querySelector(".hero .eyebrow");if(heroEyebrow)heroEyebrow.textContent=c==="de"?"Your 2027/28 winter intake, organised":(c==="se"?"Your 2027 autumn intake, organised":"Your 2027 intake, organised");var heroLead=document.querySelector(".hero .lead");if(heroLead)heroLead.textContent=c==="de"?"A clear view of German universities, programme-specific application windows, DAAD scholarship milestones and the deadlines that matter. Compare your options and keep every date in one place.":(c==="se"?"A focused shortlist of Swedish universities, finance and economics programmes, application windows and key deadlines for international applicants.":"A clear view of Italian universities, application windows and the deadlines that matter. Compare your options, build a watchlist and keep every date in one place.");var heroCap=document.querySelector(".hero .cap");if(heroCap)heroCap.textContent=c==="de"?"STUDY IN GERMANY · 2027/28":(c==="se"?"STUDY IN SWEDEN · AUTUMN 2027":"STUDY IN ITALY · 2027");document.querySelectorAll(".section-head h2")[0].textContent="Admissions overview";document.querySelectorAll(".section-head p")[0].textContent=c==="de"?"German university shortlist at a glance":(c==="se"?"Your 10 priority programme entries":"Your shortlist at a glance");document.querySelectorAll(".section-head h2")[1].textContent=c==="de"?"Explore German universities":(c==="se"?"Explore Swedish universities":"Explore universities");document.querySelector(".note").textContent=c==="de"?"Germany's winter semester 2027/28: dates are programme-specific. Exact official windows are shown where published; otherwise the card explains what is known and links to the official source. Non-EU visa applicants should verify deadlines and allow time for uni-assist/VPD where required.":(c==="se"?"Sweden's main international application round for Autumn 2027 is 16 Oct 2026–15 Jan 2027; supporting documents and application fee are due 1 Feb 2027, with Master's results on 1 Apr 2027. Stockholm School of Economics and Jönköping University also have separate/direct application procedures. Programme eligibility is highly subject-specific; read each official programme page before applying.":"Only date ranges supported by an official 2027/28 source are shown. Programme-specific calls may differ; check the linked official source before applying.");document.getElementById("tabs").querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.f==="all")});render();updateNext()}
+ setHeroVisual(c);if(c==="em"){COUNTRY="em";document.getElementById("list").hidden=true;document.getElementById("detail").hidden=true;document.getElementById("erasmus-view").hidden=false;document.querySelectorAll(".country-btn").forEach(function(b){var a=b.dataset.country===c;b.classList.toggle("active",a);b.setAttribute("aria-pressed",a)});updateNext();return;}document.getElementById("list").hidden=false;document.getElementById("erasmus-view").hidden=true;document.getElementById("detail").hidden=true;document.getElementById("sweden-calendar").hidden=c!=="se";document.getElementById("germany-calendar").hidden=c!=="de";document.querySelectorAll(".calendar-toggle").forEach(function(b){b.setAttribute("aria-expanded","false");var p=document.getElementById(b.getAttribute("aria-controls"));if(p)p.hidden=true;});COUNTRY=c;U=c==="de"?GERMANY_U:(c==="se"?SWEDEN_U:ITALY_U);VER=c==="de"?GERMANY_VER:(c==="se"?SWEDEN_VER:ITALY_VER);BUS=c==="de"?GERMANY_BUS:(c==="se"?SWEDEN_BUS:ITALY_BUS);RANK=c==="de"?{}:(c==="se"?SWEDEN_RANK:ITALY_RANK);S.filter="all";document.getElementById("q").value="";document.getElementById("region").value="";document.getElementById("region").disabled=c!=="it";document.getElementById("sort").value="close";document.querySelectorAll(".country-btn").forEach(function(b){var a=b.dataset.country===c;b.classList.toggle("active",a);b.setAttribute("aria-pressed",a)});var heroEyebrow=document.querySelector(".hero .eyebrow");if(heroEyebrow)heroEyebrow.textContent=c==="de"?"Your 2027/28 winter intake, organised":(c==="se"?"Your 2027 autumn intake, organised":"Your 2027 intake, organised");var heroLead=document.querySelector(".hero .lead");if(heroLead)heroLead.textContent=c==="de"?"A clear view of German universities, programme-specific application windows, DAAD scholarship milestones and the deadlines that matter. Compare your options and keep every date in one place.":(c==="se"?"A focused shortlist of Swedish universities, finance and economics programmes, application windows and key deadlines for international applicants.":"A clear view of Italian universities, application windows and the deadlines that matter. Compare your options, build a watchlist and keep every date in one place.");var heroCap=document.querySelector(".hero .cap");if(heroCap)heroCap.textContent=c==="de"?"STUDY IN GERMANY · 2027/28":(c==="se"?"STUDY IN SWEDEN · AUTUMN 2027":"STUDY IN ITALY · 2027");document.querySelectorAll(".section-head h2")[0].textContent="Admissions overview";document.querySelectorAll(".section-head p")[0].textContent=c==="de"?"German university shortlist at a glance":(c==="se"?"Your 10 priority programme entries":"Your shortlist at a glance");document.querySelectorAll(".section-head h2")[1].textContent=(document.getElementById("erasmus-view")&&!document.getElementById("erasmus-view").hidden)?"Erasmus Mundus programmes":(c==="de"?"Explore German universities":(c==="se"?"Explore Swedish universities":"Explore universities"));document.querySelector(".note").textContent=c==="de"?"Germany's winter semester 2027/28: dates are programme-specific. Exact official windows are shown where published; otherwise the card explains what is known and links to the official source. Non-EU visa applicants should verify deadlines and allow time for uni-assist/VPD where required.":(c==="se"?"Sweden's main international application round for Autumn 2027 is 16 Oct 2026–15 Jan 2027; supporting documents and application fee are due 1 Feb 2027, with Master's results on 1 Apr 2027. Stockholm School of Economics and Jönköping University also have separate/direct application procedures. Programme eligibility is highly subject-specific; read each official programme page before applying.":"Only date ranges supported by an official 2027/28 source are shown. Programme-specific calls may differ; check the linked official source before applying.");document.getElementById("tabs").querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.f==="all")});render();updateNext()}
 function updateNext(){var el=document.getElementById("nextdl"),label=el.querySelector("span"),best=null;if(COUNTRY==="em"){document.querySelectorAll("#erasmus-view .em-card").forEach(function(card){var title=card.querySelector("h3"),strong=card.querySelector(".em-deadline strong");if(!title||!strong)return;var m=strong.textContent.match(/(\d{1,2})\s+(January|February|March)\s+(\d{4})/i);if(!m)return;var months={january:0,february:1,march:2};var close=new Date(+m[3],months[m[2].toLowerCase()],+m[1]);if(close>=now()&&(!best||close<best.close))best={name:title.textContent.trim(),close:close,card:card};});if(best){var days=Math.max(0,Math.round((best.close-now())/DAY));label.textContent="Next: "+best.name+" · "+days+"d";el.disabled=false;el.setAttribute("aria-label","Open "+best.name+" application deadline");el.dataset.target="em-card";el.dataset.card=best.card.id||"";}else{label.textContent="No upcoming deadlines";el.disabled=true;el.setAttribute("aria-label","No upcoming Erasmus Mundus deadlines");el.dataset.target="";el.dataset.card="";}return;}U.forEach(function(u){var i=info(u);if(i.st==="open"&&(!best||i.c<best.i.c))best={u:u,i:i}});if(best){var shortName=best.u.name.trim().split(/\s+/)[0];var days=Math.max(0,Math.round((best.i.c-now())/DAY));label.textContent="Next: "+shortName+" · "+days+"d";el.disabled=false;el.setAttribute("aria-label","Open "+best.u.name+" deadline details");el.dataset.target=slug(best.u);}else{label.textContent="No open deadlines";el.disabled=true;el.setAttribute("aria-label","No currently open application deadlines");el.dataset.target="";el.dataset.card=""}}var S={watch:{},edit:{},filter:"all"};
 function load(){try{var s=JSON.parse(localStorage.getItem("itm")||"{}");S.watch=s.watch||{};S.edit=s.edit||{};var t=localStorage.getItem("itt");document.documentElement.dataset.theme="light"}catch(e){}}
 function save(){try{localStorage.setItem("itm",JSON.stringify({watch:S.watch,edit:S.edit}))}catch(e){}}
@@ -2376,6 +2467,14 @@ updateNext();
  backdrop.addEventListener('click',closeDrawer);
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
 })();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const view=document.getElementById('erasmus-view');
+  if(!view)return;
+  const heading=view.querySelector('.section-head h2');
+  if(heading)heading.textContent='Erasmus Mundus programmes';
+});
 </script>
 </body>
 </html>
