@@ -587,6 +587,17 @@ body{background:#f4f6f1;color:var(--reference-ink)}
 #erasmus-view .em-deadline strong{color:#075d3c;font-size:1.08rem}
 #erasmus-view .em-actions a{background:#087647;border-color:#087647;border-radius:11px}
 #erasmus-view .em-meta{color:#697771}
+#erasmus-view .em-details{margin-top:14px;border-top:1px solid #e5ece7;padding-top:12px}
+#erasmus-view .em-details summary{cursor:pointer;list-style:none;font-weight:750;color:#087647;font-size:.9rem;display:flex;align-items:center;justify-content:space-between;gap:12px}
+#erasmus-view .em-details summary::-webkit-details-marker{display:none}
+#erasmus-view .em-details summary::after{content:'+';font-size:1.2rem;line-height:1;color:#087647}
+#erasmus-view .em-details[open] summary::after{content:'−'}
+#erasmus-view .em-detail-content{padding-top:12px;color:#52635a;font-size:.86rem;line-height:1.55}
+#erasmus-view .em-detail-content h4{margin:13px 0 5px;color:#183d2d;font-size:.88rem}
+#erasmus-view .em-detail-content ul{margin:5px 0 10px;padding-left:19px}
+#erasmus-view .em-detail-content li{margin:3px 0}
+#erasmus-view .em-detail-content a{color:#087647;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
 @media(max-width:760px){
  #erasmus-view{padding-top:0}
  #erasmus-view .em-hero{min-height:440px;padding:34px 22px;margin:0 calc(50% - 50vw);background:#f6f8f3}
@@ -1206,6 +1217,265 @@ body{background:#f4f6f1;color:var(--reference-ink)}
   padding:9px 15px !important;
 }
 
+
+/* My Applications workspace */
+
+.apps-form-section-title{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:15px 0 3px;margin-top:4px;border-top:1px solid #e4ebe5}
+.apps-form-section-title:first-child{border-top:0;padding-top:0;margin-top:0}
+.apps-form-section-title>span{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:#e7f4ec;color:#087447;font-size:.72rem;font-weight:800}
+.apps-form-section-title strong{display:block;color:#153b2d;font-size:.92rem}
+.apps-form-section-title small{display:block;margin-top:2px;color:#718078;font-size:.74rem}
+.apps-required-star{color:#dc4545;font-weight:800;font-style:normal;margin-left:2px}
+.apps-field>span{display:block}
+#application-form [name="university"]{width:100%}
+#application-form .apps-field:focus-within{color:#075f3c}
+
+
+.apps-storage-notice{margin:-8px 0 18px;padding:11px 14px;border:1px solid #e8d6a8;border-radius:11px;background:#fff9e9;color:#765b20;font-size:.78rem;line-height:1.5}
+.apps-storage-notice[hidden]{display:none}
+
+.applications-view{padding-top:28px}
+.apps-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:16px 0 24px}
+.apps-heading h1{margin:10px 0 7px;font:700 clamp(2rem,4vw,3.1rem)/1.05 Georgia,serif;letter-spacing:-.045em;color:var(--ink)}
+.apps-heading p,.apps-section-title p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.5}
+.apps-primary,.apps-secondary,.apps-text-button{border:1px solid transparent;border-radius:11px;padding:11px 16px;font:700 .84rem/1.2 system-ui,-apple-system,sans-serif;cursor:pointer;transition:.18s}
+.apps-primary{background:#087647;color:#fff;box-shadow:0 5px 14px rgba(8,118,71,.13)}
+.apps-primary:hover{background:#06643d;transform:translateY(-1px)}
+.apps-secondary{background:#fff;border-color:var(--line);color:var(--ink)}
+.apps-secondary:hover{border-color:#91bba1;background:#f7fbf8}
+.apps-text-button{background:transparent;color:#9a5145;padding:9px 10px}
+.apps-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 24px}
+.apps-stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px 19px;box-shadow:0 4px 16px rgba(20,55,38,.035)}
+.apps-stat span{display:block;color:var(--muted);font-size:.77rem;font-weight:650}
+.apps-stat strong{display:block;margin-top:6px;color:#123e2c;font:600 2rem/1 Georgia,serif}
+.apps-deadline-panel,.apps-list-panel{background:#fff;border:1px solid var(--line);border-radius:19px;padding:21px;margin-bottom:20px;box-shadow:0 5px 20px rgba(20,55,38,.035)}
+.apps-section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:17px}
+.apps-section-title h2{margin:0 0 5px;font:600 1.45rem/1.15 Georgia,serif;color:var(--ink)}
+.apps-upcoming{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.apps-upcoming-item{display:flex;gap:12px;align-items:center;min-width:0;border:1px solid #e6eee8;background:#f9fbf8;border-radius:12px;padding:12px}
+.apps-upcoming-date{flex:none;min-width:52px;text-align:center;color:#087647;font-weight:800;font-size:.72rem;line-height:1.25}
+.apps-upcoming-date b{display:block;font-size:1.2rem}
+.apps-upcoming-copy{min-width:0}
+.apps-upcoming-copy strong{display:block;font-size:.82rem;color:#183d2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.apps-upcoming-copy span{display:block;margin-top:3px;color:var(--muted);font-size:.72rem}
+.apps-tools{display:flex;gap:8px;flex-wrap:wrap}
+.apps-tools input,.apps-tools select{height:40px;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;padding:0 11px;background:#fff;color:var(--ink);font:600 .78rem system-ui}
+.apps-tools input{min-width:220px;flex:1}
+.apps-tools select{min-width:140px}
+.apps-list-head{align-items:flex-end}
+.apps-records{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.apps-record{min-width:0;border:1px solid #e3ebe5;border-radius:14px;padding:16px;background:#fff}
+.apps-record-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.apps-record h3{margin:0;color:#173d2d;font-size:1rem;line-height:1.35}
+.apps-record-program{margin-top:4px;color:var(--muted);font-size:.8rem}
+.apps-record-badges{display:flex;gap:6px;flex-wrap:wrap;margin:11px 0}
+.apps-badge{display:inline-flex;align-items:center;border-radius:999px;padding:5px 8px;background:#edf5ef;color:#246447;font-size:.66rem;font-weight:750}
+.apps-badge.priority-a{background:#f8eee9;color:#9a543f}
+.apps-badge.priority-b{background:#edf2fa;color:#45658c}
+.apps-badge.priority-c{background:#edf5ef;color:#246447}
+.apps-record-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding-top:10px;border-top:1px solid #edf1ed}
+.apps-record-meta div{min-width:0}
+.apps-record-meta span{display:block;color:#87938c;font-size:.64rem;font-weight:750;letter-spacing:.06em;text-transform:uppercase}
+.apps-record-meta strong{display:block;margin-top:3px;color:#344b3f;font-size:.76rem;overflow-wrap:anywhere}
+.apps-record-progress{margin-top:12px}
+.apps-record-progress-top{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:.69rem}
+.apps-progress-track{height:5px;margin-top:6px;border-radius:9px;background:#edf2ed;overflow:hidden}
+.apps-progress-track span{display:block;height:100%;border-radius:9px;background:#269268}
+.apps-record-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
+.apps-record-actions button,.apps-record-actions a{border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:#fff;color:#315b45;font-size:.72rem;font-weight:700;text-decoration:none;cursor:pointer}
+.apps-empty{grid-column:1/-1;text-align:center;padding:44px 18px;border:1px dashed #d6e3d9;border-radius:14px;background:#fbfdfb}
+.apps-empty-icon{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 12px;border-radius:15px;background:#e7f4ec;color:#087647;font-size:1.5rem}
+.apps-empty h3{margin:0 0 7px;color:#183d2e;font-size:1.05rem}
+.apps-empty p{max-width:460px;margin:0 auto 16px;color:var(--muted);font-size:.82rem;line-height:1.55}
+.apps-empty-inline{grid-column:1/-1;padding:15px;border:1px dashed #d6e3d9;border-radius:12px;color:var(--muted);font-size:.82rem}
+.apps-backup-row{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 2px 28px}
+.apps-backup-row>div:first-child{display:grid;gap:4px}
+.apps-backup-row strong{color:#284838;font-size:.8rem}
+.apps-backup-row span{color:var(--muted);font-size:.73rem;line-height:1.4}
+.apps-backup-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.apps-import-label{display:inline-flex;align-items:center;cursor:pointer}
+.application-dialog{width:min(760px,calc(100vw - 24px));max-width:none;max-height:90dvh;padding:0;border:1px solid #dce8df;border-radius:20px;background:#fbfcf9;color:var(--ink);box-shadow:0 25px 90px rgba(13,38,25,.25)}
+.application-dialog::backdrop{background:rgba(10,27,19,.45);backdrop-filter:blur(3px)}
+.application-dialog form{padding:23px}
+.apps-dialog-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding-bottom:17px;border-bottom:1px solid #e5ece6}
+.apps-dialog-head h2{margin:7px 0 0;font:600 1.6rem/1.1 Georgia,serif}
+.apps-dialog-close{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:#fff;color:#315b45;font-size:1.4rem;cursor:pointer}
+.apps-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;padding:19px 0}
+.apps-field{display:grid;gap:6px;color:#52645a;font-size:.72rem;font-weight:750}
+.apps-field-wide{grid-column:1/-1}
+.apps-field input,.apps-field select,.apps-field textarea{width:100%;box-sizing:border-box;border:1px solid #dce7df;border-radius:9px;padding:10px 11px;background:#fff;color:#1d382a;font:500 .82rem system-ui;outline:none}
+.apps-field input:focus,.apps-field select:focus,.apps-field textarea:focus{border-color:#64a885;box-shadow:0 0 0 3px rgba(38,146,104,.1)}
+.apps-field textarea{resize:vertical}
+.apps-documents{padding:16px;border:1px solid #e1eae3;border-radius:13px;background:#f7faf7}
+.apps-documents h3{margin:0 0 4px;font-size:.9rem;color:#1c4632}
+.apps-documents p{margin:0 0 12px;color:var(--muted);font-size:.74rem}
+.apps-check-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.apps-check-grid label{display:flex;align-items:center;gap:8px;color:#4b6054;font-size:.76rem}
+.apps-check-grid input{accent-color:#16845a}
+.apps-dialog-actions{display:flex;align-items:center;gap:8px;margin-top:18px}
+.apps-dialog-actions>span{flex:1}
+@media(max-width:900px){
+ .apps-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .apps-upcoming{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .apps-list-head{display:block}
+ .apps-tools{margin-top:13px}
+}
+@media(max-width:650px){
+ .apps-heading{display:block;padding-top:12px}
+ .apps-heading .apps-primary{margin-top:16px;width:100%}
+ .apps-stats{gap:9px}
+ .apps-stat{padding:13px}
+ .apps-stat strong{font-size:1.7rem}
+ .apps-deadline-panel,.apps-list-panel{padding:15px;border-radius:15px}
+ .apps-upcoming{grid-template-columns:1fr}
+ .apps-tools{display:grid;grid-template-columns:1fr 1fr}
+ .apps-tools input{grid-column:1/-1;min-width:0}
+ .apps-tools select{min-width:0;width:100%}
+ .apps-records{grid-template-columns:1fr}
+ .apps-backup-row{display:block}
+ .apps-backup-actions{margin-top:12px}
+ .apps-form-grid{grid-template-columns:1fr}
+ .apps-field-wide{grid-column:auto}
+ .apps-check-grid{grid-template-columns:1fr}
+ .application-dialog form{padding:17px}
+}
+
+
+/* Erasmus Mundus: programme cards with a persistent right-hand details panel */
+#erasmus-view .em-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:20px;align-items:start}
+#erasmus-view .em-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-content:start}
+#erasmus-view .em-details{display:none}
+#erasmus-view .em-view-details{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border:1px solid #cbded1;border-radius:10px;background:#f3f8f4;color:#087647;font-size:.8rem;font-weight:750;cursor:pointer}
+#erasmus-view .em-view-details[aria-pressed="true"]{background:#e3f1e7;border-color:#087647}
+#erasmus-view .em-sidebar{position:sticky;top:18px;max-height:calc(100vh - 36px);overflow:auto;background:#fbfdfb;border:1px solid #dce8df;border-radius:18px;padding:20px;box-shadow:0 8px 24px rgba(21,55,38,.06)}
+#erasmus-view .em-sidebar-head{padding-bottom:15px;border-bottom:1px solid #e3ece5;margin-bottom:14px}
+#erasmus-view .em-sidebar-head>span{font-size:.65rem;letter-spacing:.13em;font-weight:850;color:#087647}
+#erasmus-view .em-sidebar-head h3{font-size:1.25rem;margin:7px 0 4px;color:#183d2d}
+#erasmus-view .em-sidebar-head p{font-size:.78rem;color:#68766e;margin:0}
+#erasmus-view .em-sidebar-content{color:#52635a;font-size:.82rem;line-height:1.55}
+#erasmus-view .em-sidebar-content h4{margin:15px 0 6px;color:#183d2d;font-size:.88rem}
+#erasmus-view .em-sidebar-content ul{margin:5px 0 11px;padding-left:18px}
+#erasmus-view .em-sidebar-content li{margin:4px 0}
+#erasmus-view .em-sidebar-content a{color:#087647;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1050px){#erasmus-view .em-layout{grid-template-columns:minmax(0,1fr) 320px}#erasmus-view .em-grid{grid-template-columns:1fr}}
+@media(max-width:760px){#erasmus-view .em-layout{grid-template-columns:1fr}#erasmus-view .em-sidebar{position:static;max-height:none;grid-row:1}#erasmus-view .em-grid{grid-template-columns:1fr}}
+</style>
+<style>
+/* Erasmus programme details open as a right-side drawer, matching Important Dates. */
+#em-details-drawer{width:min(560px,100vw);z-index:1002}
+#em-details-backdrop{z-index:1001}
+#em-details-drawer .dates-drawer-head{align-items:flex-start}
+#em-details-drawer .em-drawer-subtitle{margin:7px 0 0;color:#68766e;font-size:.78rem;line-height:1.4}
+#em-details-drawer .em-sidebar-content{font-size:.88rem;line-height:1.6;color:#52635a}
+#em-details-drawer .em-sidebar-content h4{margin:20px 0 7px;color:#183d2d;font-size:.96rem}
+#em-details-drawer .em-sidebar-content ul{margin:5px 0 14px;padding-left:20px}
+#em-details-drawer .em-sidebar-content li{margin:5px 0}
+#em-details-drawer .em-sidebar-content a{color:#087647;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+#erasmus-view .em-layout{display:block}
+#erasmus-view .em-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:720px){#erasmus-view .em-grid{grid-template-columns:1fr}}
+</style>
+<style>
+</style>
+<style>
+/* Shared EuroTrack action button system */
+:root{
+  --button-primary-bg:#087647;
+  --button-primary-hover:#06643c;
+  --button-secondary-bg:#f3f8f4;
+  --button-secondary-border:#cbded1;
+  --button-secondary-text:#087647;
+}
+.btn-primary,.btn-secondary{
+  box-sizing:border-box;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:10px 14px;
+  border-radius:11px;
+  font:750 .82rem/1.2 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  text-align:center;
+  text-decoration:none;
+  cursor:pointer;
+  transition:background .16s ease,border-color .16s ease,transform .16s ease;
+}
+.btn-primary{background:var(--button-primary-bg)!important;border:1px solid var(--button-primary-bg)!important;color:#fff!important}
+.btn-primary:hover{background:var(--button-primary-hover)!important;border-color:var(--button-primary-hover)!important}
+.btn-secondary{background:var(--button-secondary-bg)!important;border:1px solid var(--button-secondary-border)!important;color:var(--button-secondary-text)!important}
+.btn-secondary:hover{background:#e8f2eb!important;border-color:#a9c9b4!important}
+#erasmus-view .em-actions{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  width:100%;
+  margin-top:auto;
+  align-items:stretch;
+}
+#erasmus-view .em-actions>a,
+#erasmus-view .em-actions>button{
+  width:100%;
+  min-width:0;
+  min-height:42px;
+  margin:0;
+  white-space:normal;
+}
+</style>
+<style>
+/* EuroTrack-wide primary / secondary action styles */
+:root{
+  --et-primary:#087647;
+  --et-primary-hover:#06643c;
+  --et-secondary-bg:#f3f8f4;
+  --et-secondary-border:#cbded1;
+  --et-secondary-text:#087647;
+}
+.btn-primary,.apps-primary,.acts a{
+  background:var(--et-primary)!important;
+  border:1px solid var(--et-primary)!important;
+  color:#fff!important;
+  border-radius:11px!important;
+  font-weight:750!important;
+  text-decoration:none!important;
+}
+.btn-primary:hover,.apps-primary:hover,.acts a:hover{
+  background:var(--et-primary-hover)!important;
+  border-color:var(--et-primary-hover)!important;
+}
+.btn-secondary,.apps-secondary,.acts button,.back{
+  background:var(--et-secondary-bg)!important;
+  border:1px solid var(--et-secondary-border)!important;
+  color:var(--et-secondary-text)!important;
+  border-radius:11px!important;
+  font-weight:750!important;
+  text-decoration:none!important;
+}
+.btn-secondary:hover,.apps-secondary:hover,.acts button:hover,.back:hover{
+  background:#e8f2eb!important;
+  border-color:#a9c9b4!important;
+}
+.acts a,.acts button,.back,.apps-primary,.apps-secondary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:9px 14px;
+  box-sizing:border-box;
+  cursor:pointer;
+  transition:background .16s ease,border-color .16s ease;
+}
+</style>
+<style>
+/* Erasmus hero alignment and clean document head */
+#erasmus-view .em-hero{padding-left:clamp(24px,2.1vw,30px);padding-right:clamp(24px,2.1vw,30px)}
+#erasmus-view .em-hero-copy{width:100%;max-width:none;margin:0;text-align:left}
+#erasmus-view .em-hero h1{margin-left:0;margin-right:0;text-align:left}
+</style>
+<style>
+/* Muted grey subtitle beneath Erasmus Mundus programme names */
+#erasmus-view .em-subject{
+  color:#7b8580!important;
+}
 </style>
 </head>
 <body>
@@ -1231,7 +1501,7 @@ body{background:#f4f6f1;color:var(--reference-ink)}
   <circle cx="58.5" cy="31.5" r="3" fill="#35B98A"/>
 </svg>
 <span class="brand-name">EuroTrack</span>
-</div><nav class="country-switch" aria-label="Choose country"><button type="button" class="country-btn active" data-country="it" aria-pressed="true"><span class="flag">🇮🇹</span> Italy</button><button type="button" class="country-btn" data-country="de" aria-pressed="false"><span class="flag">🇩🇪</span> Germany</button><button type="button" class="country-btn" data-country="se" aria-pressed="false"><span class="flag">🇸🇪</span> Sweden</button><button type="button" class="country-btn" data-country="em" aria-pressed="false"><span class="flag">🎓</span> Erasmus Mundus</button></nav><select class="country-select" id="country-select" aria-label="Choose country"><option value="it">🇮🇹  Italy</option><option value="de">🇩🇪  Germany</option><option value="se">🇸🇪  Sweden</option><option value="em">🎓  Erasmus Mundus</option></select><button class="chip" id="nextdl" type="button" aria-label="Go to the next university deadline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>Finding next deadline</span></button></div></header>
+</div><nav class="country-switch" aria-label="Choose country"><button type="button" class="country-btn active" data-country="it" aria-pressed="true"><span class="flag">🇮🇹</span> Italy</button><button type="button" class="country-btn" data-country="de" aria-pressed="false"><span class="flag">🇩🇪</span> Germany</button><button type="button" class="country-btn" data-country="se" aria-pressed="false"><span class="flag">🇸🇪</span> Sweden</button><button type="button" class="country-btn" data-country="em" aria-pressed="false"><span class="flag">🎓</span> Erasmus Mundus</button><button type="button" class="country-btn apps-nav-btn" data-country="apps" aria-pressed="false" hidden style="display:none" aria-hidden="true"><span class="flag">▤</span> My Applications</button></nav><select class="country-select" id="country-select" aria-label="Choose country"><option value="it">🇮🇹  Italy</option><option value="de">🇩🇪  Germany</option><option value="se">🇸🇪  Sweden</option><option value="em">🎓  Erasmus Mundus</option><option value="apps" hidden disabled>▤  My Applications</option></select><button class="chip" id="nextdl" type="button" aria-label="Go to the next university deadline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>Finding next deadline</span></button></div></header>
 <main class="wrap" id="list">
 <section class="hero hero-italy">
   <div class="hcopy">
@@ -1342,50 +1612,93 @@ body{background:#f4f6f1;color:var(--reference-ink)}
   </section>
   
   <div class="section-head"><div><h2>Programme deadlines</h2><p>Application deadlines and programme links</p></div></div>
-  <section class="em-grid" id="em-programmes" aria-label="Erasmus Mundus programme cards">
+  <div class="em-layout"><section class="em-grid" id="em-programmes" aria-label="Erasmus Mundus programme cards">
     <article class="em-card" id="em-grenfin">
-      <div class="em-card-top"><div><h3>GrEnFIn</h3><div class="em-subject">Environmental Finance</div></div><span class="pill soon">Priority 1</span></div>
+      <div class="em-card-top"><div><h3>GrEnFIn</h3><div class="em-subject">Greening Energy Market and Finance · Environmental Finance / Climate & Business</div></div><span class="pill soon">Priority 1</span></div>
       <div class="em-deadline"><small>Application deadline</small><strong>7 January 2027 · 11:00 CET</strong></div>
-      <p class="em-description">Greening Energy Market and Finance. Focuses on finance and economics applied to energy transition and sustainable financial systems.</p>
-      <div class="em-meta">Scholarship and admission requirements must be checked in the current call.</div>
-      <div class="em-actions"><a href="https://www.grenfin.eu/" target="_blank" rel="noopener">Programme & application ↗</a></div>
+      <p class="em-description">A 2-year, 120-ECTS joint master focused on energy markets, sustainable finance and the green transition. Tracks: Renewable Technologies, Environmental Finance, and Climate & Business. 51 places (17 per track).</p>
+      <div class="em-meta">Eligibility watch: three-year degree/equivalent plus relevant curricular background in Mathematics, Physics, Economics, Statistics, IT or Engineering. A BBA Finance degree needs careful curriculum/ISCED assessment; not automatically confirmed.</div>
+      <details class="em-details"><summary>Timeline, requirements & documents</summary><div class="em-detail-content">
+        <h4>Timeline</h4><ul><li>Applications opened: 14 October 2026, 11:00 CET</li><li>Deadline: 7 January 2027, 11:00 CET</li><li>Results: 26 February–1 March 2027</li><li>Acceptance/pre-enrolment: 1–8 March 2027</li><li>Matriculation: 8–15 March 2027</li><li>Programme starts: 6 September 2027</li></ul>
+        <h4>Admission requirements</h4><ul><li>Three-year university degree or equivalent, recognised as suitable.</li><li>Curricular requirements in Mathematics, Physics, Economics, Statistical Sciences, IT or Engineering; foreign degrees are assessed for suitability.</li><li>English at CEFR B2 or above, proven with a recognised certificate.</li><li>Academic merit and overall experience; GRE/GMAT optional.</li></ul>
+        <h4>Required documents</h4><ul><li>Valid identity document (passport if ID is not in English).</li><li>Completed ISCED Classification Template.</li><li>Bachelor diploma and transcript (foreign documents translated into Italian or English).</li><li>Recognised English certificate.</li><li>Overall experience using the Europass template.</li><li>GRE/GMAT certificate optional.</li></ul>
+        <h4>Important notices</h4><ul><li>Upload every mandatory document through Studenti Online; email/post submissions are not assessed.</li><li>Incomplete mandatory documents make the application ineligible for assessment.</li><li>Scholarship: full-time only; previous EMJM scholarship holders cannot receive another EMJM scholarship; cannot combine with another EU-funded scholarship for the same course.</li><li>Scholarship ranking is shared across all three tracks and subject to geographical-balance rules.</li></ul>
+        <p><a href="https://greening-energy-market-finance-emjm.eu/application" target="_blank" rel="noopener">Official application & admission requirements ↗</a> · <a href="https://studenti.unibo.it" target="_blank" rel="noopener">Studenti Online ↗</a></p>
+      </div></details>
+      <div class="em-actions"><a class="btn-primary" href="https://greening-energy-market-finance-emjm.eu/application" target="_blank" rel="noopener">Application & requirements ↗</a></div>
     </article>
-    <article class="em-card">
-      <div class="em-card-top"><div><h3>GLOBAL COOP</h3><div class="em-subject">International Monetary & Financial System · Track 2</div></div><span class="pill soon">Priority 2</span></div>
+    <article class="em-card" id="em-global-coop">
+      <div class="em-card-top"><div><h3>GLOBAL COOP</h3><div class="em-subject">Economic Policies for New Global Cooperation and Alliances · Track 2: International Monetary & Financial System</div></div><span class="pill soon">Priority 2</span></div>
       <div class="em-deadline"><small>Application deadline</small><strong>27 January 2027 · 13:00 Paris time</strong></div>
-      <p class="em-description">International economics, monetary cooperation and the global financial system.</p>
-      <div class="em-meta">Review the Economics and Statistics credit prerequisites before applying.</div>
-      <div class="em-actions"><a href="https://global-coop.eu/" target="_blank" rel="noopener">Programme & application ↗</a></div>
+      <p class="em-description">A two-year economics-focused joint master covering international trade, the international monetary and financial system, and the just socio-ecological transition.</p>
+      <div class="em-meta">Eligibility watch: Economics degree, or another degree with at least 24 ECTS (or equivalent) in Economics and 6 ECTS in Statistics/Econometrics. Track 1 has an additional four-year-degree/equivalent condition.</div>
+      <details class="em-details"><summary>Timeline, requirements & documents</summary><div class="em-detail-content">
+        <h4>Timeline</h4><ul><li>Call opened: October 2026</li><li>Deadline: 27 January 2027, 13:00 Paris time</li><li>Interviews: March 2027</li><li>Results: end of March 2027</li><li>Programme begins: September 2027</li></ul>
+        <h4>Admission requirements</h4><ul><li>Bachelor/equivalent degree of 180 ECTS.</li><li>Economics degree, or at least 24 ECTS Economics plus 6 ECTS Statistics/Econometrics (or equivalent).</li><li>English: CEFR C1 or accepted equivalent; IELTS Academic 7.0 minimum.</li><li>Clear motivation and fit with the programme; track-specific conditions apply.</li></ul>
+        <h4>Required documents</h4><ul><li>Online application form.</li><li>Full CV (Europass recommended, not mandatory).</li><li>Degree certificate and complete academic transcript, with English translations where required.</li><li>English proficiency proof.</li><li>Statement of purpose, maximum 500 words.</li><li>Two recommendation letters from professors/teachers or job supervisors.</li><li>Valid passport copy.</li><li>Other funding details optional.</li></ul>
+        <h4>Important notices</h4><ul><li>Documents are uploaded through the online portal, not sent by email.</li><li>Start early: recommendation letters take time.</li><li>Selected applicants may need certified/legalised academic records for enrolment.</li><li>Check the chosen track and major/minor requirements carefully before applying.</li></ul>
+        <p><a href="https://www.global-coop.eu/admission-and-scholarships/admission/" target="_blank" rel="noopener">Official admission requirements ↗</a> · <a href="https://application.epog.eu/" target="_blank" rel="noopener">Application portal ↗</a></p>
+      </div></details>
+      <div class="em-actions"><a class="btn-primary" href="https://www.global-coop.eu/admission-and-scholarships/admission/" target="_blank" rel="noopener">Programme & admission ↗</a></div>
     </article>
-    <article class="em-card">
-      <div class="em-card-top"><div><h3>EPOG-JM</h3><div class="em-subject">Macroeconomics, Finance & Socioeconomic Bifurcation · Major B</div></div><span class="pill soon">Priority 3</span></div>
-      <div class="em-deadline"><small>Application deadline</small><strong>27 January 2027 · 13:00 Paris time</strong></div>
-      <p class="em-description">Economic policies, macroeconomics and finance, with a focus on structural economic transformations.</p>
-      <div class="em-meta">Review the Economics and Statistics credit prerequisites before applying.</div>
-      <div class="em-actions"><a href="https://www.epog.eu/" target="_blank" rel="noopener">Programme & application ↗</a></div>
+    <article class="em-card" id="em-epog">
+      <div class="em-card-top"><div><h3>EPOG-JM</h3><div class="em-subject">Economic Policies for the Global Bifurcation · Macroeconomics, Finance & Socioeconomic Transformation</div></div><span class="pill soon">Priority 3</span></div>
+      <div class="em-deadline"><small>2-year programme deadline</small><strong>27 January 2027 · 13:00 Paris time</strong></div>
+      <p class="em-description">A two-year joint master in economics examining digital, socio-economic and ecological transitions through pluralist and interdisciplinary approaches.</p>
+      <div class="em-meta">Eligibility watch: Economics degree, or another degree with at least 24 ECTS in Economics and 6 ECTS in Statistics/Econometrics. Published selection criteria include a minimum GPA of 70% of the maximum scale.</div>
+      <details class="em-details"><summary>Timeline, requirements & documents</summary><div class="em-detail-content">
+        <h4>Timeline</h4><ul><li>Call opened: October 2026</li><li>Deadline: 27 January 2027, 13:00 Paris time</li><li>Interviews: March 2027</li><li>Results: end of March 2027</li><li>Programme begins: September 2027</li></ul>
+        <h4>Admission requirements</h4><ul><li>Bachelor/equivalent degree of 180 ECTS.</li><li>Economics degree, or at least 24 ECTS Economics plus 6 ECTS Statistics/Econometrics (or equivalent).</li><li>English proficiency proof; check the programme's accepted-test list and any minor-specific conditions.</li><li>Selection considers academic background, academic records, motivation/recommendations and languages. Published GPA criterion: at least 70% of the maximum scale.</li></ul>
+        <h4>Required documents</h4><ul><li>Completed online application.</li><li>Full CV.</li><li>Degree certificate and academic transcript(s), with English translations where required.</li><li>English proficiency proof.</li><li>Statement of purpose, maximum 500 words.</li><li>Two recommendation letters.</li><li>Valid passport copy.</li><li>Other funding information optional.</li></ul>
+        <h4>Important notices</h4><ul><li>Do not email application documents; upload them through the official portal.</li><li>Track/major/minor prerequisites can differ; confirm the requirements for the intended pathway.</li><li>Academic eligibility is not guaranteed by meeting the general degree rule alone; course-credit requirements matter.</li></ul>
+        <p><a href="https://www.epog.eu/admission-and-scholarships/admission/" target="_blank" rel="noopener">Official admission requirements ↗</a> · <a href="https://application.epog.eu/" target="_blank" rel="noopener">Application portal ↗</a></p>
+      </div></details>
+      <div class="em-actions"><a class="btn-primary" href="https://www.epog.eu/admission-and-scholarships/admission/" target="_blank" rel="noopener">Programme & admission ↗</a></div>
     </article>
-    <article class="em-card">
-      <div class="em-card-top"><div><h3>EGEI</h3><div class="em-subject">International Economics & European Integration</div></div><span class="pill soon">Priority 4</span></div>
+    <article class="em-card" id="em-egei">
+      <div class="em-card-top"><div><h3>EGEI</h3><div class="em-subject">Economics of Globalisation and European Integration</div></div><span class="pill soon">Priority 4</span></div>
       <div class="em-deadline"><small>Scholarship application deadline</small><strong>28 February 2027</strong></div>
-      <p class="em-description">Economics of globalisation, international economic relations and European integration.</p>
-      <div class="em-meta">The scholarship deadline is distinct from the later self-funded admission deadline.</div>
-      <div class="em-actions"><a href="https://www.egei.eu/" target="_blank" rel="noopener">Programme & application ↗</a></div>
+      <p class="em-description">A two-year master in international economics, globalisation, European integration and international economic relations. Scholarship call offers 10 full scholarships for 2027–28.</p>
+      <div class="em-meta">Eligibility watch: 180 ECTS in Economics, Applied Economics or related disciplines, with a solid economics and quantitative-analysis foundation. Your transcript needs course-level review.</div>
+      <details class="em-details"><summary>Timeline, requirements & documents</summary><div class="em-detail-content">
+        <h4>Timeline</h4><ul><li>Platform opened: 15 November 2026</li><li>Scholarship deadline: 28 February 2027</li><li>Applicants needing a visa: programme recommends applying by 30 March 2027 for non-scholarship consideration only.</li><li>Self-funded applications (where visa not needed): up to 30 May 2027, subject to eligibility.</li><li>Shortlisted interviews: likely last week of March 2027</li><li>Programme starts: early September 2027.</li></ul>
+        <h4>Admission requirements</h4><ul><li>180 ECTS bachelor-level degree or higher in Economics, Applied Economics or related disciplines.</li><li>Solid economics background, including quantitative analysis (e.g. micro/macro, econometrics/statistics, international economics).</li><li>English proficiency certificate; consult the programme's accepted proof list.</li></ul>
+        <h4>Required documents</h4><ul><li>ID/passport and proof of residence.</li><li>Degree diploma(s) and official transcript of records.</li><li>Legalised copy of degree certificate(s) for the subsequent verification/enrolment stage.</li><li>Motivation letter.</li><li>Up-to-date Europass CV.</li><li>English proficiency proof.</li><li>Contact details for 1–3 referees (first referee must be academic).</li><li>Optional evidence of additional skills/qualifications.</li></ul>
+        <h4>Important notices</h4><ul><li>Scholarship applications by 28 February are automatically considered for the 2027–28 scholarship competition.</li><li>Scholarship package stated by the programme: fee waiver plus €1,400/month, with 10 full scholarships announced on the programme page.</li><li>Scholarship and self-funded deadlines differ; later submission does not qualify for scholarship consideration.</li><li>Original degree documents are checked on arrival at the first host institution.</li></ul>
+        <p><a href="https://www.master-egei.eu/how-to-apply/" target="_blank" rel="noopener">Official application & requirements ↗</a> · <a href="https://form.jotform.com/242864314938364" target="_blank" rel="noopener">Application form ↗</a></p>
+      </div></details>
+      <div class="em-actions"><a class="btn-primary" href="https://www.master-egei.eu/how-to-apply/" target="_blank" rel="noopener">Programme & admission ↗</a></div>
     </article>
-    <article class="em-card">
+    <article class="em-card" id="em-m3ep">
       <div class="em-card-top"><div><h3>M3EP</h3><div class="em-subject">European Environmental Economics & Policy</div></div><span class="pill soon">Priority 5</span></div>
-      <div class="em-deadline"><small>2027/28 application deadline</small><strong>15 January 2027 · 23:59 CET</strong></div>
-      <p class="em-description">Environmental economics, climate and energy policy, and the economics of the green transition.</p>
-      <div class="em-meta">Eligibility caution: applicants with an international bachelor’s degree need 60 ECTS in Economics and/or Political Science. Check your transcript course-by-course; Finance credits are not automatically equivalent.</div>
-      <div class="em-actions"><a href="https://m3ep.eu/admission-scholarships/" target="_blank" rel="noopener">Programme & application ↗</a></div>
+      <div class="em-deadline"><small>Non-EU/EEA/Swiss application deadline</small><strong>15 January 2027 · 23:59 CET</strong></div>
+      <p class="em-description">A two-year environmental economics and policy joint master: first year at the University of Copenhagen, second-year specialisation at one of four partner universities; double degree.</p>
+      <div class="em-meta">Eligibility caution: international applicants need at least 60 ECTS in Economics and/or Political Science. Finance credits are not automatically equivalent; map your transcript.</div>
+      <details class="em-details"><summary>Timeline, requirements & documents</summary><div class="em-detail-content">
+        <h4>Timeline</h4><ul><li>Non-EU/EEA/Swiss application window opened: 15 November 2026</li><li>Deadline for applicants from outside EU/EEA/Switzerland: 15 January 2027, 23:59 CET</li><li>EU/EEA/Swiss application window opens: 16 January 2027; deadline 1 March 2027, 23:59 CET</li><li>Non-EU results: late March to May 2027</li><li>Programme starts: September 2027 (check offer/handbook for exact arrival dates).</li></ul>
+        <h4>Admission requirements</h4><ul><li>Relevant bachelor-level degree and required subject-credit background.</li><li>At least 60 ECTS in Economics and/or Political Science for international bachelor qualifications, as stated in the programme admission criteria.</li><li>English proficiency and academic documentation according to University of Copenhagen requirements.</li></ul>
+        <h4>Required documents</h4><ul><li>Prepare the documents specified in the University of Copenhagen application portal and M3EP admission procedure, including degree certificate and transcript.</li><li>English-language proof and motivation letter as required by the official application instructions.</li><li>Supporting documents must meet the official certification/translation rules.</li></ul>
+        <h4>Important notices</h4><ul><li>Non-EU deadline is earlier than the EU/EEA/Swiss deadline; Bangladesh applicants follow the non-EU schedule.</li><li>Scholarship holders must complete the required mobility across two countries different from their country of residence at application.</li><li>Do not assume BBA Finance courses count toward the 60-ECTS Economics/Political Science requirement without programme confirmation.</li></ul>
+        <p><a href="https://m3ep.eu/admission-scholarships/" target="_blank" rel="noopener">Official admission & scholarships ↗</a> · <a href="https://m3ep.eu/faq/" target="_blank" rel="noopener">Official FAQ ↗</a></p>
+      </div></details>
+      <div class="em-actions"><a class="btn-primary" href="https://m3ep.eu/admission-scholarships/" target="_blank" rel="noopener">Programme & admission ↗</a></div>
     </article>
-    <article class="em-card">
+    <article class="em-card" id="em-glodep">
       <div class="em-card-top"><div><h3>GLODEP</h3><div class="em-subject">Global Development Policy</div></div><span class="pill soon">Priority 6</span></div>
-      <div class="em-deadline"><small>2027–2029 first-call deadline</small><strong>31 January 2027</strong></div>
-      <p class="em-description">Global development policy, economic development and policy analysis.</p>
-      <div class="em-meta">Eligibility caution: requires at least 60 ECTS in Economics, a minimum GPA equivalent to 2.7/4.0, and C1 English. Your 2.80 GPA meets the stated numeric threshold only if equivalence is accepted; verify the Economics-credit requirement.</div>
-      <div class="em-actions"><a href="https://glodep.eu/admission/criteria-and-requirements/" target="_blank" rel="noopener">Programme & application ↗</a></div>
+      <div class="em-deadline"><small>Scholarship application deadline</small><strong>31 January 2027</strong></div>
+      <p class="em-description">A two-year programme in global development policy, economic development and policy analysis, delivered by Palacký University Olomouc, University of Clermont Auvergne and University of Göttingen.</p>
+      <div class="em-meta">Eligibility caution: at least 60 ECTS in Economics and C1 English. Non-French/non-German applicants need GPA equivalent to at least 2.7/4.0; your 2.80 meets the stated numerical threshold only if formally considered equivalent.</div>
+      <details class="em-details"><summary>Timeline, requirements & documents</summary><div class="em-detail-content">
+        <h4>Timeline</h4><ul><li>Scholarship/first call: 5 November 2026–31 January 2027</li><li>Self-funded second call: 1 February–15 March 2027</li><li>Admission results: second half of March (first call)</li><li>Scholarship interviews: first half of April</li><li>Scholarship decisions: second half of April</li><li>Programme starts: mid-September 2027.</li></ul>
+        <h4>Admission requirements</h4><ul><li>At least 60 ECTS (or equivalent) in Economics during the bachelor’s degree.</li><li>For applicants outside German/French grading systems, GPA equivalent to at least 2.7/4.0.</li><li>English at CEFR C1; accepted IELTS minimum is 7.0.</li><li>Strong interest in international development and development policy.</li></ul>
+        <h4>Required documents</h4><ul><li>Scan of original degree diploma.</li><li>Transcript of records or diploma supplement, including completed courses.</li><li>Accepted English proficiency proof.</li><li>Europass CV, maximum three A4 pages.</li><li>Motivation letter, maximum 500 words.</li><li>Valid international passport (programme states validity through at least September 2029).</li></ul>
+        <h4>Important notices</h4><ul><li>Only PDF attachments in English are accepted (diploma exception as specified); incomplete applications are not assessed.</li><li>Diploma certification/recognition is not required at application stage; it follows after admission.</li><li>Documents cannot be added or changed after submission; submit and pay before the deadline.</li><li>The 1 February–15 March second call is for self-funded applicants only, not scholarship applicants.</li><li>Selection may include an online interview for scholarship competition.</li></ul>
+        <p><a href="https://glodep.eu/admission/criteria-and-requirements/" target="_blank" rel="noopener">Official criteria & required documents ↗</a> · <a href="https://glodep.eu/faq/" target="_blank" rel="noopener">Official FAQ ↗</a></p>
+      </div></details>
+      <div class="em-actions"><a class="btn-primary" href="https://glodep.eu/admission/criteria-and-requirements/" target="_blank" rel="noopener">Programme & admission ↗</a></div>
     </article>
   </section>
+  </div>
   <p class="em-note">Dates are based on the programme information checked on 23 November 2026. Confirm the current call, time zone, scholarship availability and application route on each official website before submitting. M3EP and GLODEP have explicit subject-credit prerequisites; their inclusion does not mean your eligibility is confirmed.</p>
 </main>
 <main class="wrap" id="detail" hidden></main>
@@ -1394,6 +1707,14 @@ body{background:#f4f6f1;color:var(--reference-ink)}
 <label for="d2">Closing date</label><input type="date" id="d2" required>
 <div class="acts"><button type="button" id="reset">Reset</button><button type="button" id="cancel">Cancel</button><a href="#" id="save" role="button">Save</a></div></form></dialog>
 <div class="dates-backdrop" id="dates-backdrop" hidden></div>
+<div class="dates-backdrop" id="em-details-backdrop" hidden></div>
+<aside class="dates-drawer" id="em-details-drawer" role="dialog" aria-modal="true" aria-labelledby="em-sidebar-title" aria-hidden="true">
+  <div class="dates-drawer-head">
+    <div><span class="dates-drawer-kicker">PROGRAMME INFORMATION</span><h2 id="em-sidebar-title">Programme details</h2><p id="em-sidebar-subtitle" class="em-drawer-subtitle">Timeline, requirements, documents and important notices</p></div>
+    <button type="button" class="dates-drawer-close" id="close-em-details-drawer" aria-label="Close programme details">×</button>
+  </div>
+  <div class="dates-drawer-body em-sidebar-content" id="em-sidebar-content"></div>
+</aside>
 <aside class="dates-drawer" id="dates-drawer" role="dialog" aria-modal="true" aria-labelledby="dates-drawer-title" aria-hidden="true">
   <div class="dates-drawer-head">
     <div><span class="dates-drawer-kicker" id="dates-drawer-kicker">APPLICATION TIMELINE</span><h2 id="dates-drawer-title">Important dates</h2></div>
@@ -1401,6 +1722,121 @@ body{background:#f4f6f1;color:var(--reference-ink)}
   </div>
   <div class="dates-drawer-body" id="dates-drawer-body"></div>
 </aside>
+
+<main class="wrap applications-view" id="applications-view" hidden>
+  <section class="apps-heading">
+    <div>
+      <span class="eyebrow">YOUR APPLICATION WORKSPACE · 2027</span>
+      <h1>My Applications</h1>
+      <p>Keep every university application, document and deadline organised in one place.</p>
+    </div>
+    <button class="apps-primary" id="add-application" type="button">＋ Add application</button>
+  </section>
+  <div class="apps-storage-notice" id="apps-storage-notice" role="status" aria-live="polite" hidden></div>
+
+  <section class="apps-stats" aria-label="Application overview">
+    <article class="apps-stat"><span>Total applications</span><strong id="apps-total">0</strong></article>
+    <article class="apps-stat"><span>In progress</span><strong id="apps-progress">0</strong></article>
+    <article class="apps-stat"><span>Submitted</span><strong id="apps-submitted">0</strong></article>
+    <article class="apps-stat"><span>Offers received</span><strong id="apps-offers">0</strong></article>
+  </section>
+
+  <section class="apps-deadline-panel">
+    <div class="apps-section-title"><div><h2>Upcoming actions</h2><p>Application deadlines and follow-ups, ordered by date</p></div></div>
+    <div id="apps-upcoming" class="apps-upcoming"><div class="apps-empty-inline">Your upcoming deadlines and follow-ups will appear here.</div></div>
+  </section>
+
+  <section class="apps-list-panel">
+    <div class="apps-section-title apps-list-head">
+      <div><h2>Application tracker</h2><p>Manage your shortlist and monitor each application stage.</p></div>
+      <div class="apps-tools">
+        <input id="apps-search" type="search" placeholder="Search university or programme" aria-label="Search applications">
+        <select id="apps-status-filter" aria-label="Filter by application status">
+          <option value="">All statuses</option>
+          <option>Not Started</option><option>Documents Preparing</option><option>Application In Progress</option>
+          <option>Submitted</option><option>Awaiting Recommendation</option><option>Under Review</option>
+          <option>Additional Documents Requested</option><option>Interview Invited</option>
+          <option>Admitted</option><option>Rejected</option><option>Waitlisted</option>
+        </select>
+        <select id="apps-priority-filter" aria-label="Filter by priority">
+          <option value="">All priorities</option><option value="A">A · Dream</option><option value="B">B · Target</option><option value="C">C · Safer</option>
+        </select>
+      </div>
+    </div>
+    <div id="apps-records" class="apps-records">
+      <div class="apps-empty">
+        <div class="apps-empty-icon">▤</div>
+        <h3>Your application tracker starts here</h3>
+        <p>Add your first university to track its deadline, fees, documents, recommendation letters and application status.</p>
+        <button class="apps-primary" type="button" data-app-add>＋ Add your first application</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="apps-backup-row">
+    <div><strong>Your data stays in this browser</strong><span>Applications are saved locally on this device. Export a backup before clearing browser data or switching devices.</span></div>
+    <div class="apps-backup-actions">
+      <button type="button" class="apps-secondary" id="apps-export">Export backup</button>
+      <label class="apps-secondary apps-import-label">Import backup<input type="file" id="apps-import" accept="application/json,.json" hidden></label>
+      <button type="button" class="apps-text-button" id="apps-clear">Clear all</button>
+    </div>
+  </section>
+</main>
+
+<dialog id="application-dialog" class="application-dialog">
+  <form id="application-form" method="post" novalidate>
+    <div class="apps-dialog-head">
+      <div><span class="eyebrow">APPLICATION DETAILS</span><h2 id="application-dialog-title">Add application</h2></div>
+      <button type="button" class="apps-dialog-close" id="application-close" aria-label="Close">×</button>
+    </div>
+    <div class="apps-form-grid">
+      <div class="apps-form-section-title"><span>01</span><div><strong>University & programme</strong><small>Where are you applying?</small></div></div>
+      <label class="apps-field apps-field-wide"><span>University name <b class="apps-required-star">*</b></span><input name="university" required list="university-suggestions" autocomplete="off" placeholder="Start typing a university name"></label>
+      <datalist id="university-suggestions"></datalist>
+      <label class="apps-field"><span>Country <b class="apps-required-star">*</b></span><select name="country" required><option value="" disabled selected>Select country</option><option>Italy</option><option>Germany</option><option>Sweden</option><option>Other</option></select></label>
+      <label class="apps-field"><span>Programme name <b class="apps-required-star">*</b></span><input name="program" required placeholder="e.g. MSc Finance"></label>
+      <label class="apps-field apps-field-wide">Application portal URL<input name="portal" type="url" placeholder="https://"></label>
+
+      <div class="apps-form-section-title"><span>02</span><div><strong>Deadlines & finances</strong><small>Track key dates, costs and funding.</small></div></div>
+      <label class="apps-field"><span>Application deadline <b class="apps-required-star">*</b></span><input name="deadline" type="date" required></label>
+      <label class="apps-field">Follow-up date<input name="followup" type="date"></label>
+      <label class="apps-field">Application fee<input name="fee" placeholder="e.g. €35"></label>
+      <label class="apps-field">Tuition fee<input name="tuition" placeholder="e.g. €3,000/year"></label>
+      <label class="apps-field">Funding / scholarship<input name="funding" placeholder="Scholarship name or coverage"></label>
+      <label class="apps-field">Priority<select name="priority"><option value="A">A · Dream</option><option value="B" selected>B · Target</option><option value="C">C · Safer</option></select></label>
+      <label class="apps-field apps-field-wide">Application status<select name="status">
+        <option>Not Started</option><option>Documents Preparing</option><option>Application In Progress</option><option>Submitted</option><option>Awaiting Recommendation</option><option>Under Review</option><option>Additional Documents Requested</option><option>Interview Invited</option><option>Admitted</option><option>Rejected</option><option>Waitlisted</option>
+      </select></label>
+      <label class="apps-field">Submission date<input name="submitted" type="date"></label>
+      <label class="apps-field">Application ID<input name="applicationId" placeholder="Portal reference"></label>
+
+      <div class="apps-form-section-title"><span>03</span><div><strong>Documents & progress</strong><small>Monitor preparation and outstanding items.</small></div></div>
+      <label class="apps-field">SOP status<select name="sop"><option>Not started</option><option>Drafting</option><option>Reviewing</option><option>Ready</option><option>Submitted</option></select></label>
+      <label class="apps-field">Recommendation letters<select name="lor"><option>Not requested</option><option>Requested</option><option>Partially submitted</option><option>Submitted</option><option>Not required</option></select></label>
+      <label class="apps-field apps-field-wide">Missing documents<textarea name="missing" rows="2" placeholder="List documents still required"></textarea></label>
+      <label class="apps-field apps-field-wide">Notes<textarea name="notes" rows="3" placeholder="Admission requirements, contact person, next steps..."></textarea></label>
+    </div>
+    <div class="apps-documents">
+      <div><h3>Document checklist</h3><p>Track the documents needed for this application.</p></div>
+      <div class="apps-check-grid">
+        <label><input type="checkbox" name="doc_cv"> CV / Resume</label>
+        <label><input type="checkbox" name="doc_sop"> SOP / Motivation letter</label>
+        <label><input type="checkbox" name="doc_transcript"> Academic transcript</label>
+        <label><input type="checkbox" name="doc_degree"> Degree certificate</label>
+        <label><input type="checkbox" name="doc_ielts"> IELTS / English proof</label>
+        <label><input type="checkbox" name="doc_passport"> Passport</label>
+        <label><input type="checkbox" name="doc_lor"> Recommendation letters</label>
+        <label><input type="checkbox" name="doc_finance"> Financial documents</label>
+      </div>
+    </div>
+    <div class="apps-dialog-actions">
+      <button type="button" class="apps-text-button" id="application-delete" hidden>Delete application</button>
+      <span></span>
+      <button type="button" class="apps-secondary" id="application-cancel">Cancel</button>
+      <button type="submit" class="apps-primary">Save application</button>
+    </div>
+  </form>
+</dialog>
 
 <script>
 // name|city|region|site|open|close  (estimated 2027/28 intake windows)
@@ -1624,7 +2060,20 @@ function setHeroVisual(country){
  }
  if(emHero)emHero.style.setProperty("--em-hero-image",'url("'+EUROTRACK_HERO_IMAGES.em+'")');
 }
-function setCountry(c){var picker=document.getElementById("country-select");if(picker)picker.value=c;setHeroVisual(c);if(c==="em"){COUNTRY="em";document.getElementById("list").hidden=true;document.getElementById("detail").hidden=true;document.getElementById("erasmus-view").hidden=false;document.querySelectorAll(".country-btn").forEach(function(b){var a=b.dataset.country===c;b.classList.toggle("active",a);b.setAttribute("aria-pressed",a)});updateNext();return;}document.getElementById("list").hidden=false;document.getElementById("erasmus-view").hidden=true;document.getElementById("detail").hidden=true;document.getElementById("sweden-calendar").hidden=c!=="se";document.getElementById("germany-calendar").hidden=c!=="de";document.querySelectorAll(".calendar-toggle").forEach(function(b){b.setAttribute("aria-expanded","false");var p=document.getElementById(b.getAttribute("aria-controls"));if(p)p.hidden=true;});COUNTRY=c;U=c==="de"?GERMANY_U:(c==="se"?SWEDEN_U:ITALY_U);VER=c==="de"?GERMANY_VER:(c==="se"?SWEDEN_VER:ITALY_VER);BUS=c==="de"?GERMANY_BUS:(c==="se"?SWEDEN_BUS:ITALY_BUS);RANK=c==="de"?{}:(c==="se"?SWEDEN_RANK:ITALY_RANK);S.filter="all";document.getElementById("q").value="";document.getElementById("region").value="";document.getElementById("region").disabled=c!=="it";document.getElementById("sort").value="close";document.querySelectorAll(".country-btn").forEach(function(b){var a=b.dataset.country===c;b.classList.toggle("active",a);b.setAttribute("aria-pressed",a)});var heroEyebrow=document.querySelector(".hero .eyebrow");if(heroEyebrow)heroEyebrow.textContent=c==="de"?"Your 2027/28 winter intake, organised":(c==="se"?"Your 2027 autumn intake, organised":"Your 2027 intake, organised");var heroLead=document.querySelector(".hero .lead");if(heroLead)heroLead.textContent=c==="de"?"A clear view of German universities, programme-specific application windows, DAAD scholarship milestones and the deadlines that matter. Compare your options and keep every date in one place.":(c==="se"?"A focused shortlist of Swedish universities, finance and economics programmes, application windows and key deadlines for international applicants.":"A clear view of Italian universities, application windows and the deadlines that matter. Compare your options, build a watchlist and keep every date in one place.");var heroCap=document.querySelector(".hero .cap");if(heroCap)heroCap.textContent=c==="de"?"STUDY IN GERMANY · 2027/28":(c==="se"?"STUDY IN SWEDEN · AUTUMN 2027":"STUDY IN ITALY · 2027");document.querySelectorAll(".section-head h2")[0].textContent="Admissions overview";document.querySelectorAll(".section-head p")[0].textContent=c==="de"?"German university shortlist at a glance":(c==="se"?"Your 10 priority programme entries":"Your shortlist at a glance");document.querySelectorAll(".section-head h2")[1].textContent=c==="de"?"Explore German universities":(c==="se"?"Explore Swedish universities":"Explore universities");document.querySelector(".note").textContent=c==="de"?"Germany's winter semester 2027/28: dates are programme-specific. Exact official windows are shown where published; otherwise the card explains what is known and links to the official source. Non-EU visa applicants should verify deadlines and allow time for uni-assist/VPD where required.":(c==="se"?"Sweden's main international application round for Autumn 2027 is 16 Oct 2026–15 Jan 2027; supporting documents and application fee are due 1 Feb 2027, with Master's results on 1 Apr 2027. Stockholm School of Economics and Jönköping University also have separate/direct application procedures. Programme eligibility is highly subject-specific; read each official programme page before applying.":"Only date ranges supported by an official 2027/28 source are shown. Programme-specific calls may differ; check the linked official source before applying.");document.getElementById("tabs").querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.f==="all")});render();updateNext()}
+function setCountry(c){var picker=document.getElementById("country-select");if(picker)picker.value=c;
+ if(c==="apps"){
+   document.getElementById("list").hidden=true;
+   document.getElementById("detail").hidden=true;
+   document.getElementById("erasmus-view").hidden=true;
+   document.getElementById("applications-view").hidden=false;
+   document.querySelectorAll(".country-btn").forEach(function(b){var a=b.dataset.country==="apps";b.classList.toggle("active",a);b.setAttribute("aria-pressed",a)});
+   document.getElementById("nextdl").style.visibility="hidden";
+   renderApplicationWorkspace();
+   return;
+ }
+ document.getElementById("applications-view").hidden=true;
+ document.getElementById("nextdl").style.visibility="visible";
+ setHeroVisual(c);if(c==="em"){COUNTRY="em";document.getElementById("list").hidden=true;document.getElementById("detail").hidden=true;document.getElementById("erasmus-view").hidden=false;document.querySelectorAll(".country-btn").forEach(function(b){var a=b.dataset.country===c;b.classList.toggle("active",a);b.setAttribute("aria-pressed",a)});updateNext();return;}document.getElementById("list").hidden=false;document.getElementById("erasmus-view").hidden=true;document.getElementById("detail").hidden=true;document.getElementById("sweden-calendar").hidden=c!=="se";document.getElementById("germany-calendar").hidden=c!=="de";document.querySelectorAll(".calendar-toggle").forEach(function(b){b.setAttribute("aria-expanded","false");var p=document.getElementById(b.getAttribute("aria-controls"));if(p)p.hidden=true;});COUNTRY=c;U=c==="de"?GERMANY_U:(c==="se"?SWEDEN_U:ITALY_U);VER=c==="de"?GERMANY_VER:(c==="se"?SWEDEN_VER:ITALY_VER);BUS=c==="de"?GERMANY_BUS:(c==="se"?SWEDEN_BUS:ITALY_BUS);RANK=c==="de"?{}:(c==="se"?SWEDEN_RANK:ITALY_RANK);S.filter="all";document.getElementById("q").value="";document.getElementById("region").value="";document.getElementById("region").disabled=c!=="it";document.getElementById("sort").value="close";document.querySelectorAll(".country-btn").forEach(function(b){var a=b.dataset.country===c;b.classList.toggle("active",a);b.setAttribute("aria-pressed",a)});var heroEyebrow=document.querySelector(".hero .eyebrow");if(heroEyebrow)heroEyebrow.textContent=c==="de"?"Your 2027/28 winter intake, organised":(c==="se"?"Your 2027 autumn intake, organised":"Your 2027 intake, organised");var heroLead=document.querySelector(".hero .lead");if(heroLead)heroLead.textContent=c==="de"?"A clear view of German universities, programme-specific application windows, DAAD scholarship milestones and the deadlines that matter. Compare your options and keep every date in one place.":(c==="se"?"A focused shortlist of Swedish universities, finance and economics programmes, application windows and key deadlines for international applicants.":"A clear view of Italian universities, application windows and the deadlines that matter. Compare your options, build a watchlist and keep every date in one place.");var heroCap=document.querySelector(".hero .cap");if(heroCap)heroCap.textContent=c==="de"?"STUDY IN GERMANY · 2027/28":(c==="se"?"STUDY IN SWEDEN · AUTUMN 2027":"STUDY IN ITALY · 2027");document.querySelectorAll(".section-head h2")[0].textContent="Admissions overview";document.querySelectorAll(".section-head p")[0].textContent=c==="de"?"German university shortlist at a glance":(c==="se"?"Your 10 priority programme entries":"Your shortlist at a glance");document.querySelectorAll(".section-head h2")[1].textContent=c==="de"?"Explore German universities":(c==="se"?"Explore Swedish universities":"Explore universities");document.querySelector(".note").textContent=c==="de"?"Germany's winter semester 2027/28: dates are programme-specific. Exact official windows are shown where published; otherwise the card explains what is known and links to the official source. Non-EU visa applicants should verify deadlines and allow time for uni-assist/VPD where required.":(c==="se"?"Sweden's main international application round for Autumn 2027 is 16 Oct 2026–15 Jan 2027; supporting documents and application fee are due 1 Feb 2027, with Master's results on 1 Apr 2027. Stockholm School of Economics and Jönköping University also have separate/direct application procedures. Programme eligibility is highly subject-specific; read each official programme page before applying.":"Only date ranges supported by an official 2027/28 source are shown. Programme-specific calls may differ; check the linked official source before applying.");document.getElementById("tabs").querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.f==="all")});render();updateNext()}
 function updateNext(){var el=document.getElementById("nextdl"),label=el.querySelector("span"),best=null;if(COUNTRY==="em"){document.querySelectorAll("#erasmus-view .em-card").forEach(function(card){var title=card.querySelector("h3"),strong=card.querySelector(".em-deadline strong");if(!title||!strong)return;var m=strong.textContent.match(/(\d{1,2})\s+(January|February|March)\s+(\d{4})/i);if(!m)return;var months={january:0,february:1,march:2};var close=new Date(+m[3],months[m[2].toLowerCase()],+m[1]);if(close>=now()&&(!best||close<best.close))best={name:title.textContent.trim(),close:close,card:card};});if(best){var days=Math.max(0,Math.round((best.close-now())/DAY));label.textContent="Next: "+best.name+" · "+days+"d";el.disabled=false;el.setAttribute("aria-label","Open "+best.name+" application deadline");el.dataset.target="em-card";el.dataset.card=best.card.id||"";}else{label.textContent="No upcoming deadlines";el.disabled=true;el.setAttribute("aria-label","No upcoming Erasmus Mundus deadlines");el.dataset.target="";el.dataset.card="";}return;}U.forEach(function(u){var i=info(u);if(i.st==="open"&&(!best||i.c<best.i.c))best={u:u,i:i}});if(best){var shortName=best.u.name.trim().split(/\s+/)[0];var days=Math.max(0,Math.round((best.i.c-now())/DAY));label.textContent="Next: "+shortName+" · "+days+"d";el.disabled=false;el.setAttribute("aria-label","Open "+best.u.name+" deadline details");el.dataset.target=slug(best.u);}else{label.textContent="No open deadlines";el.disabled=true;el.setAttribute("aria-label","No currently open application deadlines");el.dataset.target="";el.dataset.card=""}}var S={watch:{},edit:{},filter:"all"};
 function load(){try{var s=JSON.parse(localStorage.getItem("itm")||"{}");S.watch=s.watch||{};S.edit=s.edit||{};var t=localStorage.getItem("itt");document.documentElement.dataset.theme="light"}catch(e){}}
 function save(){try{localStorage.setItem("itm",JSON.stringify({watch:S.watch,edit:S.edit}))}catch(e){}}
@@ -1747,9 +2196,186 @@ updateNext();
  });
 })();
 
+
+/* EuroTrack: local application management workspace */
+(function(){
+ var KEY="eurotrack_my_applications_v1", records=[], editingId=null;
+ var statuses=["Not Started","Documents Preparing","Application In Progress","Submitted","Awaiting Recommendation","Under Review","Additional Documents Requested","Interview Invited","Admitted","Rejected","Waitlisted"];
+ var docKeys=["doc_cv","doc_sop","doc_transcript","doc_degree","doc_ielts","doc_passport","doc_lor","doc_finance"];
+ var storageAvailable=true;
+ function showStorageNotice(message){var n=document.getElementById("apps-storage-notice");if(!n)return;if(message){n.textContent=message;n.hidden=false;}else{n.textContent="";n.hidden=true;}}
+ function populateUniversitySuggestions(){
+   var list=document.getElementById("university-suggestions");if(!list)return;
+   var all=[];
+   [window.U,window.GERMANY_U,window.SWEDEN_U].forEach(function(group){
+     if(Array.isArray(group))group.forEach(function(item){if(item&&item.name)all.push(item.name);});
+   });
+   ["GrEnFIn","GLOBAL COOP","EPOG-JM","EGEI","M3EP","GLODEP","Euroculture"].forEach(function(name){all.push(name);});
+   Array.from(new Set(all)).sort(function(a,b){return a.localeCompare(b);}).forEach(function(name){
+     var option=document.createElement("option");option.value=name;list.appendChild(option);
+   });
+ }
+ function loadApps(){try{var raw=window.localStorage.getItem(KEY);records=raw?JSON.parse(raw):[];if(!Array.isArray(records))records=[];storageAvailable=true;showStorageNotice("");}catch(e){records=[];storageAvailable=false;showStorageNotice("Browser storage is blocked in this preview. You can still add and edit applications while this page remains open, but they will not persist after refresh. Use “Export backup” before leaving this page.");}}
+ function saveApps(){try{window.localStorage.setItem(KEY,JSON.stringify(records));storageAvailable=true;showStorageNotice("");return true;}catch(e){storageAvailable=false;showStorageNotice("Your application was added to this session, but this preview blocks browser storage. It may be lost when you refresh or close the page. Select “Export backup” below to keep a copy.");return false;}}
+ function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]});}
+ function dateLabel(v){if(!v)return "Not set";var d=new Date(v+"T12:00:00");return isNaN(d)?"Not set":d.toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"});}
+ function daysUntil(v){if(!v)return null;var now=new Date();now.setHours(0,0,0,0);var d=new Date(v+"T00:00:00");return Math.round((d-now)/86400000);}
+ function docsDone(r){return docKeys.filter(function(k){return r.docs&&r.docs[k]}).length;}
+ function docsPct(r){return Math.round(docsDone(r)/docKeys.length*100);}
+ function statusClass(s){return s==="Admitted"?"admitted":(s==="Rejected"?"rejected":(s==="Submitted"||s==="Under Review"?"submitted":""));}
+ function renderApplicationWorkspace(){
+   var total=records.length,progress=records.filter(function(r){return !["Not Started","Admitted","Rejected","Waitlisted"].includes(r.status)}).length;
+   document.getElementById("apps-total").textContent=total;
+   document.getElementById("apps-progress").textContent=progress;
+   document.getElementById("apps-submitted").textContent=records.filter(function(r){return ["Submitted","Awaiting Recommendation","Under Review","Additional Documents Requested","Interview Invited"].includes(r.status)}).length;
+   document.getElementById("apps-offers").textContent=records.filter(function(r){return r.status==="Admitted"}).length;
+   renderUpcoming();renderRecords();
+ }
+ function renderUpcoming(){
+   var el=document.getElementById("apps-upcoming"),items=[];
+   records.forEach(function(r){
+     if(r.deadline)items.push({date:r.deadline,type:"Application deadline",name:r.university,program:r.program});
+     if(r.followup)items.push({date:r.followup,type:"Follow-up",name:r.university,program:r.program});
+   });
+   items=items.filter(function(x){return daysUntil(x.date)!==null&&daysUntil(x.date)>=-1}).sort(function(a,b){return a.date.localeCompare(b.date)}).slice(0,6);
+   if(!items.length){el.innerHTML='<div class="apps-empty-inline">No upcoming deadlines or follow-ups yet. Add dates to an application to see them here.</div>';return;}
+   el.innerHTML=items.map(function(x){var d=new Date(x.date+"T12:00:00");return '<article class="apps-upcoming-item"><div class="apps-upcoming-date"><b>'+d.getDate()+'</b>'+d.toLocaleDateString(undefined,{month:"short"}).toUpperCase()+'</div><div class="apps-upcoming-copy"><strong>'+esc(x.name)+'</strong><span>'+esc(x.type)+(x.program?" · "+esc(x.program):"")+'</span></div></article>'}).join("");
+ }
+ function renderRecords(){
+   var el=document.getElementById("apps-records"),q=document.getElementById("apps-search").value.trim().toLowerCase(),st=document.getElementById("apps-status-filter").value,pr=document.getElementById("apps-priority-filter").value;
+   var rows=records.filter(function(r){return (!q||(r.university+" "+r.program+" "+r.country).toLowerCase().includes(q))&&(!st||r.status===st)&&(!pr||r.priority===pr)});
+   if(!rows.length){el.innerHTML=records.length?'<div class="apps-empty"><h3>No matching applications</h3><p>Try changing your search or filters.</p></div>':'<div class="apps-empty"><div class="apps-empty-icon">▤</div><h3>Your application tracker starts here</h3><p>Add your first university to track its deadline, fees, documents, recommendation letters and application status.</p><button class="apps-primary" type="button" data-app-add>＋ Add your first application</button></div>';return;}
+   el.innerHTML=rows.map(function(r){
+     var p=r.priority||"B",days=daysUntil(r.deadline),progress=docsPct(r),portal=r.portal&&/^https?:\/\//i.test(r.portal)?'<a href="'+esc(r.portal)+'" target="_blank" rel="noopener">Open portal ↗</a>':"";
+     return '<article class="apps-record"><div class="apps-record-top"><div><h3>'+esc(r.university)+'</h3><div class="apps-record-program">'+esc(r.program||"Programme not specified")+' · '+esc(r.country||"Country not set")+'</div></div></div><div class="apps-record-badges"><span class="apps-badge priority-'+p.toLowerCase()+'">'+p+' · '+({A:"Dream",B:"Target",C:"Safer"}[p]||"Target")+'</span><span class="apps-badge '+statusClass(r.status)+'">'+esc(r.status||"Not Started")+'</span></div><div class="apps-record-meta"><div><span>Application deadline</span><strong>'+(r.deadline?esc(dateLabel(r.deadline))+(days!==null?(days<0?" · Passed":days===0?" · Today":" · "+days+" days"):""):"Not set")+'</strong></div><div><span>Application fee</span><strong>'+esc(r.fee||"Not specified")+'</strong></div><div><span>Tuition fee</span><strong>'+esc(r.tuition||"Not specified")+'</strong></div><div><span>Recommendation letters</span><strong>'+esc(r.lor||"Not requested")+'</strong></div></div><div class="apps-record-progress"><div class="apps-record-progress-top"><span>Document checklist</span><strong>'+docsDone(r)+'/8 ready</strong></div><div class="apps-progress-track"><span style="width:'+progress+'%"></span></div></div><div class="apps-record-actions">'+portal+'<button type="button" data-app-edit="'+esc(r.id)+'">Edit details</button></div></article>';
+   }).join("");
+ }
+ function openForm(id){
+   editingId=id||null;var form=document.getElementById("application-form");form.reset();
+   var r=records.find(function(x){return x.id===id});
+   document.getElementById("application-dialog-title").textContent=r?"Edit application":"Add application";
+   document.getElementById("application-delete").hidden=!r;
+   if(r){
+     Object.keys(r).forEach(function(k){if(k==="docs")return;var field=form.elements[k];if(field)field.value=r[k]||"";});
+     docKeys.forEach(function(k){form.elements[k].checked=!!(r.docs&&r.docs[k]);});
+   }
+   document.getElementById("application-dialog").showModal();
+ }
+ function closeForm(){document.getElementById("application-dialog").close();}
+ function readForm(){
+   var f=document.getElementById("application-form"),r={id:editingId||("app_"+Date.now()+"_"+Math.random().toString(36).slice(2,7)),docs:{}};
+   ["university","country","program","portal","deadline","followup","fee","tuition","funding","priority","status","submitted","applicationId","sop","lor","missing","notes"].forEach(function(k){r[k]=f.elements[k].value.trim();});
+   docKeys.forEach(function(k){r.docs[k]=f.elements[k].checked;});
+   return r;
+ }
+ document.addEventListener("click",function(ev){
+   if(ev.target.closest("#add-application")||ev.target.closest("[data-app-add]"))openForm(null);
+   var edit=ev.target.closest("[data-app-edit]");if(edit)openForm(edit.dataset.appEdit);
+ });
+ document.getElementById("application-close").addEventListener("click",closeForm);
+ document.getElementById("application-cancel").addEventListener("click",closeForm);
+ function handleApplicationSave(ev){
+   if(ev)ev.preventDefault();
+   var form=document.getElementById("application-form");
+   var required=["university","country","program","deadline"];
+   for(var ri=0;ri<required.length;ri++){
+     var field=form.elements[required[ri]];
+     if(!field||!String(field.value||"").trim()){
+       field&&field.focus();
+       var notice=document.getElementById("apps-storage-notice");
+       if(notice){notice.textContent="Please complete all required fields marked with a red *.";notice.hidden=false;}
+       return false;
+     }
+   }
+   if(!form.reportValidity())return false;
+   var r=readForm();
+   var i=records.findIndex(function(x){return x.id===r.id});
+   if(i>=0)records[i]=r;else records.unshift(r);
+   var saved=saveApps();
+   renderApplicationWorkspace();
+   closeForm();
+   var notice=document.getElementById("apps-storage-notice");
+   if(notice&&!saved){notice.textContent="Application added for this session, but browser storage is blocked. Export a backup before closing this page.";notice.hidden=false;}
+   else if(notice){notice.textContent="Application saved successfully.";notice.hidden=false;setTimeout(function(){notice.hidden=true;},3500);}
+   return true;
+ }
+ document.getElementById("application-form").addEventListener("submit",handleApplicationSave);
+ document.querySelector("#application-form button[type=submit]").addEventListener("click",function(ev){
+   ev.preventDefault();handleApplicationSave(ev);
+ });
+ document.getElementById("application-delete").addEventListener("click",function(){
+   if(!editingId||!confirm("Delete this application record?"))return;
+   records=records.filter(function(r){return r.id!==editingId});saveApps();renderApplicationWorkspace();closeForm();
+ });
+ ["apps-search","apps-status-filter","apps-priority-filter"].forEach(function(id){document.getElementById(id).addEventListener("input",renderRecords);});
+ document.getElementById("apps-export").addEventListener("click",function(){
+   var blob=new Blob([JSON.stringify({version:1,exportedAt:new Date().toISOString(),applications:records},null,2)],{type:"application/json"});
+   var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="eurotrack-applications-backup.json";a.click();URL.revokeObjectURL(a.href);
+ });
+ document.getElementById("apps-import").addEventListener("change",function(){
+   var file=this.files&&this.files[0];if(!file)return;var reader=new FileReader();
+   reader.onload=function(){try{var parsed=JSON.parse(reader.result),incoming=Array.isArray(parsed)?parsed:parsed.applications;if(!Array.isArray(incoming))throw new Error("Invalid backup");if(!confirm("Import "+incoming.length+" application records? This will replace the current list."))return;records=incoming;saveApps();renderApplicationWorkspace();alert("Backup imported.");}catch(e){alert("Could not import this backup file.");}};
+   reader.readAsText(file);this.value="";
+ });
+ document.getElementById("apps-clear").addEventListener("click",function(){
+   if(!records.length)return;if(!confirm("Delete all saved application records from this browser? Export a backup first if needed."))return;records=[];saveApps();renderApplicationWorkspace();
+ });
+ populateUniversitySuggestions();
+ loadApps();
+ window.renderApplicationWorkspace=renderApplicationWorkspace;
+})();
+
 </script>
 
 
 
+
+
+
+
+<script>
+(function(){
+ const cards=[...document.querySelectorAll('#em-programmes .em-card')];
+ const title=document.getElementById('em-sidebar-title');
+ const subtitle=document.getElementById('em-sidebar-subtitle');
+ const content=document.getElementById('em-sidebar-content');
+ const drawer=document.getElementById('em-details-drawer');
+ const backdrop=document.getElementById('em-details-backdrop');
+ const close=document.getElementById('close-em-details-drawer');
+ if(!cards.length||!content||!drawer||!backdrop)return;
+ let lastTrigger=null;
+ function openDrawer(card,button){
+   cards.forEach(c=>{const b=c.querySelector('.em-view-details');if(b)b.setAttribute('aria-expanded',String(c===card));});
+   title.textContent=card.querySelector('h3')?.textContent||'Programme details';
+   subtitle.textContent=card.querySelector('.em-subject')?.textContent||'Timeline, requirements, documents and important notices';
+   const detail=card.querySelector('.em-detail-content');
+   content.innerHTML=detail?detail.innerHTML:'<p>Programme details are not available.</p>';
+   lastTrigger=button||null;
+   backdrop.hidden=false;
+   requestAnimationFrame(()=>{backdrop.classList.add('show');drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');});
+   document.body.classList.add('drawer-open');
+   close?.focus();
+ }
+ function closeDrawer(){
+   drawer.classList.remove('open');backdrop.classList.remove('show');
+   drawer.setAttribute('aria-hidden','true');
+   document.body.classList.remove('drawer-open');
+   window.setTimeout(()=>{backdrop.hidden=true;},260);
+   if(lastTrigger)lastTrigger.focus();
+ }
+ cards.forEach(card=>{
+   const actions=card.querySelector('.em-actions');
+   if(!actions)return;
+   const button=document.createElement('button');
+   button.type='button';button.className='em-view-details btn-secondary';button.textContent='Details';
+   button.setAttribute('aria-expanded','false');
+   button.addEventListener('click',()=>openDrawer(card,button));
+   actions.prepend(button);
+ });
+ close?.addEventListener('click',closeDrawer);
+ backdrop.addEventListener('click',closeDrawer);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
+})();
+</script>
 </body>
 </html>
